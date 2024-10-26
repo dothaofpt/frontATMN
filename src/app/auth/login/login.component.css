@@ -1,0 +1,53 @@
+
+/* Container cho toàn bộ form đăng nhập */
+.login-form-container {
+  width: 400px; /* Chiều rộng của thẻ hình vuông */
+  padding: 20px; /* Khoảng cách bên trong */
+  border: 1px solid #ccc; /* Đường viền xám */
+  border-radius: 8px; /* Bo tròn các góc */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Đổ bóng */
+  background-color: #fff; /* Màu nền trắng */
+  margin: 100px auto; /* Giữa trang dọc */
+  display: flex; /* Sử dụng flexbox để căn giữa nội dung */
+  flex-direction: column; /* Sắp xếp theo chiều dọc */
+}
+
+/* Tiêu đề */
+h2 {
+  text-align: center; /* Căn giữa tiêu đề */
+  color: #333; /* Màu chữ tiêu đề */
+}
+
+/* Nhóm các thẻ input */
+.form-group {
+  margin-bottom: 15px; /* Khoảng cách giữa các nhóm */
+}
+
+/* Định dạng các thẻ input */
+input.form-control {
+  width: 100%; /* Chiều rộng 100% để chiếm hết không gian */
+  padding: 10px; /* Khoảng cách bên trong */
+  border: 1px solid #ccc; /* Đường viền xám */
+  border-radius: 4px; /* Bo tròn các góc */
+}
+
+/* Định dạng nút bấm */
+.btn-primary {
+  background-color: #007bff; /* Màu nền nút */
+  color: white; /* Màu chữ nút */
+  border: none; /* Không có đường viền */
+  padding: 10px; /* Khoảng cách bên trong */
+  border-radius: 4px; /* Bo tròn các góc */
+  cursor: pointer; /* Hiệu ứng khi rê chuột */
+}
+
+/* Đổi màu nút khi rê chuột */
+.btn-primary:hover {
+  background-color: #0056b3; /* Màu nền nút khi rê chuột */
+}
+
+/* Định dạng thông báo lỗi */
+.error-text {
+  color: red; /* Màu chữ thông báo lỗi */
+  font-size: 0.9em; /* Kích thước chữ nhỏ hơn */
+}

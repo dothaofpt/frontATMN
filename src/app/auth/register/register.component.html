@@ -1,0 +1,76 @@
+
+<div class="register-form-container">
+  <h2>Register</h2>
+
+  <form (ngSubmit)="onRegister()" #registerForm="ngForm" novalidate>
+    <!-- Name Input -->
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input
+        type="text"
+        [(ngModel)]="name"
+        name="name"
+        #nameCtrl="ngModel"
+        id="name"
+        class="form-control"
+        placeholder="Enter your name"
+        required />
+
+      <!-- Error message for name -->
+      <div *ngIf="nameCtrl.invalid && (nameCtrl.dirty || nameCtrl.touched)">
+        <small class="error-text" *ngIf="nameCtrl.errors && nameCtrl.errors['required']">Name is required.</small>
+      </div>
+    </div>
+
+    <!-- Email Input -->
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        [(ngModel)]="email"
+        name="email"
+        #emailCtrl="ngModel"
+        id="email"
+        class="form-control"
+        placeholder="Enter your email"
+        required
+        email />
+
+      <!-- Error message for email -->
+      <div *ngIf="emailCtrl.invalid && (emailCtrl.dirty || emailCtrl.touched)">
+        <small class="error-text" *ngIf="emailCtrl.errors && emailCtrl.errors['required']">Email is required.</small>
+        <small class="error-text" *ngIf="emailCtrl.errors && emailCtrl.errors['email']">Enter a valid email.</small>
+      </div>
+    </div>
+
+    <!-- Password Input -->
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input
+        type="password"
+        [(ngModel)]="password"
+        name="password"
+        #passwordCtrl="ngModel"
+        id="password"
+        class="form-control"
+        placeholder="Enter your password"
+        required
+        minlength="6" />
+
+      <!-- Error message for password -->
+      <div *ngIf="passwordCtrl.invalid && (passwordCtrl.dirty || passwordCtrl.touched)">
+        <small class="error-text" *ngIf="passwordCtrl.errors && passwordCtrl.errors['required']">Password is required.</small>
+        <small class="error-text" *ngIf="passwordCtrl.errors && passwordCtrl.errors['minlength']">Password must be at least 6 characters.</small>
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid">Register</button>
+
+    <!-- Error Message -->
+    <p *ngIf="errorMessage" class="error-text">{{ errorMessage }}</p>
+
+    <!-- Redirect to Login -->
+    <p>Already have an account? <a (click)="goToLogin()">Login here</a></p>
+  </form>
+</div>
